@@ -1,5 +1,6 @@
 {
   "type": "module",
+  "index":"main.js",
   "dependencies": {
     "node-html-parser": "^6.1.5",
     "puppeteer": "^20.4.0",
