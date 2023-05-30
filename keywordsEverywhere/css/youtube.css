@@ -1,0 +1,136 @@
+/**
+ * Youtube
+ */
+.ytd-page-manager .xt-widget-table {
+    min-width: auto;
+}
+.ytd-page-manager .xt-copy-export-row {
+    margin-right: 2.5rem;
+}
+.ytd-page-manager .xt-widget-table-th-keyword .xt-ke-btn {
+    margin-right: 1.5rem;
+}
+.ytd-page-manager .xt-widget-table h3 {
+    font-size: 16px;
+}
+
+.xt-video-insights-table td,
+.xt-video-insights-table th {
+    padding: .45rem .2rem;
+}
+.xt-video-insights-table td:first-child {
+    padding-left: 0;
+}
+.xt-video-insights-table:hover td {
+    opacity: .75;
+}
+.xt-video-insights-table {
+    color: var(--yt-spec-text-secondary);
+}
+.xt-yt-item-advanced-metrics.xt-yt-page-metrics span {
+    font-size: 11px;
+}
+.xt-yt-vi-advanced-metrics {
+    margin-left: 5px;
+}
+
+/**
+ * Popover
+ */
+.xt-yt-popover {
+    padding: 5px;
+}
+.xt-yt-popover table {
+    border-collapse: collapse;
+}
+.xt-yt-popover table tr td {
+    padding: 6px 4px;
+    border-bottom: solid 1px #ececec;
+}
+.xt-yt-popover table tr:last-child td {
+    border-bottom: none;
+}
+.xt-yt-popover .xt-widget-table table td:first-child {
+    text-align: left;
+}
+
+.xt-yt-item-good {
+    /*color: green;*/
+}
+.xt-yt-item-avg {
+    /*color: blue;*/
+}
+.xt-yt-item-bad {
+    /*color: red;*/
+}
+.xt-yt-item-advanced-metrics.xt-yt-page-metrics {
+    margin-top: 3px;
+}
+
+.xt-color-suggestive {
+    color: var(--yt-spec-themed-blue);
+}
+.xt-ke-badge-suggestive {
+    border: 1px solid var(--yt-spec-call-to-action);
+    color: var(--yt-spec-call-to-action);
+}
+
+/** Search Insights */
+.xt-widget-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--yt-spec-themed-blue);
+    margin-right: 4px;
+    display: block;
+}
+
+/**
+ * Dark theme
+ */
+html[dark="true"] .xt-widget-table-td-highlight {
+    color: var(--yt-spec-themed-blue);
+}
+html[dark="true"] .xt-yt-popover table tr td {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+html[dark="true"] .xt-video-insights-table {
+    color: #888;
+}
+html[dark="true"] .xt-video-insights-table:hover tr:hover td {
+    color: #aaa;
+}
+html[dark="true"] .xt-yt-item-advanced-metrics.xt-yt-page-metrics span {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+html[dark="true"] .xt-yt-page-metrics .xt-ke-badge-light {
+    background-color: #303030;
+}
+html[dark="true"] .xt-youtube-query {
+    color: var(--yt-spec-text-secondary);
+}
+
+/** Youtube dark overrides ytd-app */
+html[dark="true"] .xt-ke-badge-light {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+html[dark="true"] .xt-widget-table,
+html[dark="true"] .xt-ke-card {
+    background-color: #1c1c1c;
+}
+
+html[dark="true"] .xt-trend-time {
+    color: var(--yt-spec-text-secondary);
+}
+
+html[dark="true"] .xt-widget-table table,
+html[dark="true"] .xt-widget-table a,
+html[dark="true"] .xt-youtube-query {
+    color: var(--yt-spec-text-secondary);
+}
+html[dark="true"] .xt-popover-header,
+html[dark="true"] .xt-popover-content,
+html[dark="true"] .xt-popover-footer {
+    color: var(--yt-spec-text-secondary);
+}

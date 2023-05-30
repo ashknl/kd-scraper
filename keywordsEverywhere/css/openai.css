@@ -1,0 +1,131 @@
+#xt-openai-widget {
+  position: fixed;
+  width: 800px;
+  max-height: 650px;
+  top: 50px;
+  left: 300px;
+  /*right: 0;*/
+  margin: 0 auto;
+  /*bottom: 0;*/
+  display: block;
+  z-index: 2147483647; /* max int */
+  background: rgba(0, 0, 0, 0.25);
+}
+
+#xt-openai-widget iframe {
+  position: absolute;
+  display: block;
+  /*right: 0;*/
+  border: none;
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  max-height: 650px;
+  box-shadow: -3px 0 19px rgba(0, 0, 0, 0.19);
+}
+
+.xt-openai-templates-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.xt-openai-widget-handle {
+  position: absolute;
+  height: 30px;
+  background: #202123;
+  width: 100%;
+  cursor: move;
+  color: #fff;
+}
+
+html.dark .xt-openai-widget-handle {
+  background-color: #40414F;
+}
+
+.xt-openai-widget-handle-title {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+html.dark .xt-openai-widget-handle svg {
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.xt-openai-widget-handle svg {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  margin-right: 5px;
+  /*vertical-align: middle;*/
+  position: relative;
+  top: -1px;
+  fill: #ffffff;
+  stroke: #ffffff;
+}
+
+.xt-openai-widget-handle .xt-openai-widget-btn-close {
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  top: 2px;
+  cursor: pointer;
+}
+
+/**
+ * Floating bar override
+ */
+
+.xt-icon[data-type=custom] > div a {
+  display: none;
+  border: solid 1px #ccc;
+  font-size: 13px;
+  padding: 0px 3px;
+}
+
+.xt-icon[data-type=custom] > div a:first-child {
+  display: block;
+}
+
+html.dark .xt-icon[data-type=custom] > div a {
+  border-color: #767676;
+}
+
+html.dark .xt-buttons-container {
+  background: #202123;
+  border-color: #202123;
+  color: #d9d9e3;
+}
+
+.xt-buttons-drag-handle {
+  display: block;
+  background: #202123;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/img/k-logo.svg');
+  background-size: 16px;
+  background-position: 2px;
+  background-repeat: no-repeat;
+}
+
+html.dark .xt-buttons-drag-handle {
+  background-color: #40414F;
+}
+
+.xt-buttons-container {
+  padding-left: 20px;
+  background: #fafafa;
+  border: solid 1px #ccc;
+}
+
+.xt-icon[data-type=custom] > div a:hover {
+  background: #eaeaea;
+}
+
+html.dark .xt-icon[data-type=custom] > div a:hover {
+  background: #40414F;
+}
+
+.xt-icon[data-type=custom]:hover > div a {
+  display: block;
+}

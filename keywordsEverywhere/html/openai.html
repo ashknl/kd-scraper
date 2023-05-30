@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link href="/img/icon16.png" rel="icon" type="image/png" sizes="16x16"/>
+        <link href="/img/icon32.png" rel="icon" type="image/png" sizes="32x32"/>
+        <link rel="stylesheet" href="/css/openai-widget.css"/>
+        <link rel="stylesheet" href="/css/tooltip.css"/>
+    </head>
+    <body>
+<!--
+        <span class="btn-close">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span> -->
+
+        <div class="header-padding"></div>
+
+        <div class="row" id="section-templates">
+            <div>
+                <label for="select-category">Category:</label>
+                <select id="select-category">
+                    <option>Choose a category</option>
+                </select>
+            </div>
+            <div>
+                <label for="select-subcategory">Sub-category:</label>
+                <select id="select-subcategory"></select>
+            </div>
+            <div>
+                <label for="select-template">Templates:</label>
+                <select id="select-template"></select>
+            </div>
+        </div>
+
+        <div class="row" id="section-description">
+            Please browse through our categories and sub-categories above and select a prompt template that you'd like to execute
+        </div>
+        <div class="row" id="section-global">
+            <div data-id="select-language">
+                <label for="select-language">Languages:</label>
+                <select id="select-language" data-name="language"></select>
+            </div>
+            <div data-id="select-country">
+                <label for="select-country">Countries:</label>
+                <select id="select-country" data-name="country"></select>
+            </div>
+            <div data-id="select-tone-of-voice">
+                <label for="select-tone-of-voice">Voice Tones:</label>
+                <select id="select-tone-of-voice" data-name="tone_of_voice"></select>
+            </div>
+            <div data-id="select-writing-style">
+                <label for="select-writing-style">Writing Styles:</label>
+                <select id="select-writing-style" data-name="writing_style"></select>
+            </div>
+        </div>
+        <div class="row" id="section-inputs">
+        </div>
+        <div class="row" id="section-prompt">
+            <div>
+                <label>Prompt Template</label>
+                <textarea rows="8" id="promptTextarea"></textarea>
+            </div>
+        </div>
+        <div class="row" id="section-execute">
+            <button id="executeTemplate">Execute Template</button>
+        </div>
+
+        <div id="section-footer">
+            <iframe src=""></iframe>
+        </div>
+
+        <script type="text/javascript" src="/lib/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/js/API.js"></script>
+        <script type="text/javascript" src="/js/Prefix.js"></script>
+        <script type="text/javascript" src="/js/widget-helpers.js"></script>
+        <script type="text/javascript" src="/js/cs-tooltip.js"></script>
+        <script type="text/javascript" src="/js/cs-iframe-resize.js"></script>
+        <script type="text/javascript" src="/js/openai-app.js"></script>
+
+    </body>
+</html>

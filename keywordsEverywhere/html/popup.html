@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link href="/img/icon16.png" rel="icon" type="image/png" sizes="16x16"/>
+        <link href="/img/icon32.png" rel="icon" type="image/png" sizes="32x32"/>
+
+        <link rel="stylesheet" type="text/css" href="/css/fonts.css">
+        <link rel="stylesheet" type="text/css" href="/css/popup.css">
+    </head>
+    <body>
+        <header class="top-content">
+            <div class="container">
+                <div class="center-flex">
+                    <a href="https://keywordseverywhere.com/" class="logo-holder" target="_blank">
+                        <img src="/img/logo.png"/>
+                    </a>
+
+                    <nav class="nav center-flex ml-auto">
+                        <a href="https://keywordseverywhere.com/ke/1/stats.php" data-page="stats" target="_blank" class="icon stats">
+                            <div class="icon-container">
+                                <img src="/img/icons/bars.png" />
+                            </div>
+                            <div class="icon-label">Stats</div>
+                        </a>
+
+                        <a href="https://keywordseverywhere.com/ke/1/invoices.php" data-page="invoices" target="_blank" class="icon invoice">
+                            <div class="icon-container">
+                                <img src="/img/icons/invoice.png" />
+                            </div>
+                            <div class="icon-label">Invoices</div>
+                        </a>
+
+                        <a href="https://keywordseverywhere.com/contact.html" target="_blank" class="icon contact">
+                            <div class="icon-container contact">
+                                <img src="/img/icons/mail.png" />
+                            </div>
+                            <div class="icon-label contact">Contact</div>
+                        </a>
+
+                        <a href="/html/options.html" target="_blank" class="icon settings">
+                            <div class="icon-container">
+                                <img src="/img/icons/settings.png" />
+                            </div>
+                            <div class="icon-label">Settings</div>
+                        </a>
+                    </nav>
+                </div>
+
+                <div class="center-flex">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span id="toggle-extension" class="toggle-button slider round" data-state="off"></span>
+                    </label>
+
+                    <div class="ml-auto">
+                        <select id="country"></select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="container">
+                <div class="maintenance-msg hidden">Keywords Everywhere is currently undergoing maintenance</div>
+
+                <div class="row">
+                    <div class="col">
+                        <a href="https://keywordseverywhere.com/ke/1/manual.php" data-page="manual" target="_blank" class="icon-section upload">
+                            <div class="icon-container">
+                                <img src="/img/icons/keywords.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Bulk</span><br>
+                                Keywords Data
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/analyze.php" target="_blank" class="icon-section analyze">
+                            <div class="icon-container">
+                                <img src="/img/icons/analyze-page.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Analyze</span><br>
+                                 Page Content
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/trends.php" data-page="trends" target="_blank" class="icon-section trends">
+                            <div class="icon-container">
+                                <img src="/img/icons/bulk-trends-data.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Bulk</span><br>Trends Data
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/gap.php" target="_blank" class="icon-section feature-gap" data-page="gap">
+                            <div class="icon-container">
+                                <img src="/img/icons/competitor-gap-analysis.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Competitor Gap</span><br>Analysis
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/favorites.php" data-page="favorites" target="_blank" class="icon-section favorite">
+                            <div class="icon-container">
+                                <img src="/img/icons/my-keywords.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>My Favorite</span><br>Keywords
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <a href="https://keywordseverywhere.com/ke/1/keywords.php" target="_blank" data-target="url" class="icon-section feature-keywords">
+                            <div class="icon-container">
+                                <img src="/img/icons/organic-ranking-url.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Organic Ranking</span><br> Keywords (URL)
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/keywords.php" target="_blank" data-target="domain" class="icon-section feature-keywords">
+                            <div class="icon-container">
+                                <img src="/img/icons/organic-ranking-domain.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Organic Ranking</span><br> Keywords (Domain)
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/bulkTraffic.php" target="_blank" data-target="url" class="icon-section feature-bulkTraffic">
+                            <div class="icon-container">
+                                <img src="/img/icons/bulk-traffic-metrics-url.png" />
+                            </div>
+                            <div class="icon-label">
+                                Bulk Traffic <br>Metrics (URL)
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/bulkTraffic.php" target="_blank" data-target="domain" class="icon-section feature-bulkTraffic">
+                            <div class="icon-container">
+                                <img src="/img/icons/bulk-traffic-metrics-domain.png" />
+                            </div>
+                            <div class="icon-label">
+                                Bulk Traffic <br>Metrics (Domain)
+                            </div>
+                        </a>
+                        <a href="https://keywordseverywhere.com/ke/1/toppages.php" target="_blank" class="icon-section feature-toppages">
+                            <div class="icon-container">
+                                <img src="/img/icons/top-ranking-pages.png" />
+                            </div>
+                            <div class="icon-label">
+                                <span>Get Top</span><br>Ranking Pages
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="line">
+
+                <div id="iframe-root"></div>
+
+                <div id="apiKeyWarning" class="hidden">
+                    Please setup an API key in the settings page to see search volume data.
+                    <a href="https://keywordseverywhere.com/first-install-addon.html" target="_blank">Generate your API Key</a>
+                </div>
+
+                <div id="disabledWarning" class="hidden">
+                    Please enable the extension
+                </div>
+            </div>
+        </main>
+
+        <script type="text/javascript" src="/lib/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/js/popup.js"></script>
+    </body>
+</html>

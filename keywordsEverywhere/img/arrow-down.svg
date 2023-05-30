@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="5px" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Extension-design-v2--on" transform="translate(-407.000000, -369.000000)" fill="#454545" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(176.000000, 351.000000)">
+                <g id="select-option">
+                    <path d="M237.861256,20.9083426 L234.158285,24.8497413 C233.922731,25.1005913 233.540821,25.1005913 233.305382,24.8497413 C233.069923,24.5991144 233.069923,24.1926217 233.305382,23.9420151 L236.58194,20.4544795 L233.305477,16.9670656 C233.070019,16.7163373 233.070019,16.3098852 233.305477,16.0592584 C233.540935,15.80853 233.922826,15.80853 234.15838,16.0592584 L237.861352,20.0007179 C237.979081,20.1260922 238.037879,20.2902351 238.037879,20.4544592 C238.037879,20.6187645 237.978967,20.7830292 237.861256,20.9083426 Z" id="arrow-down" transform="translate(235.583333, 20.454545) rotate(90.000000) translate(-235.583333, -20.454545) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

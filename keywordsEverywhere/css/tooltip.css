@@ -1,0 +1,11 @@
+.xt-ke-tooltip {
+    position: absolute;
+    z-index: 9999;
+    max-width: 800px;
+    padding: 10px;
+    font: 14px/1.6em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+    background: #222;
+    border-radius: 3px;
+    box-sizing: border-box;
+}

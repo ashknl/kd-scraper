@@ -1,0 +1,157 @@
+{
+   "action": {
+      "default_icon": "/img/icon128.png",
+      "default_popup": "/html/popup.html"
+   },
+   "background": {
+      "service_worker": "sw_background.js"
+   },
+   "content_scripts": [ {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-wmtools.js", "/js/cs-run.js" ],
+      "matches": [ "https://www.google.com/webmasters/tools/search-analytics*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-gsearch-console.js", "/js/cs-run.js" ],
+      "matches": [ "https://search.google.com/search-console*", "https://search.google.com/u/*/search-console*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-ga.js", "/js/cs-run.js" ],
+      "matches": [ "https://analytics.google.com/analytics/web/*", "https://analytics.google.com/analytics/app/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-gkp2.js", "/js/cs-run.js" ],
+      "matches": [ "https://adwords.google.com/aw/*", "https://ads.google.com/aw/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-gkp.js", "/js/cs-run.js" ],
+      "matches": [ "https://adwords.google.com/ko/KeywordPlanner/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/lib/chartjs/Chart.min.css", "/css/style.css" ],
+      "exclude_globs": [ "https://analytics.google.com/analytics/web/*", "https://www.google.com/webmasters/tools/search-analytics*" ],
+      "include_globs": [ "*://www.google.*/*" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/chartjs/Chart.bundle.min.js", "/lib/pluralize.js", "/js/CSV.js", "/js/TrendsChart.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-google.js", "/js/cs-run.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "include_globs": [ "*://www.google.*/trends/*", "*://trends.google.*/trends/*" ],
+      "js": [ "/js/cs-gtrends-inject.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "/lib/chartjs/Chart.min.css", "/css/style.css" ],
+      "include_globs": [ "*://www.google.*/trends/*", "*://trends.google.*/trends/*" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/chartjs/Chart.bundle.min.js", "/js/CSV.js", "/js/TrendsChart.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-gtrends.js", "/js/cs-run.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_idle"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-uberio.js", "/js/cs-run.js" ],
+      "matches": [ "*://ubersuggest.io/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/lib/jquery-ui/jquery-ui.min.css", "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/jquery-ui/jquery-ui.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-atp.js", "/js/cs-run.js" ],
+      "matches": [ "*://answerthepublic.com/reports/*", "*://answerthepublic.com/*/reports/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/lib/jquery-ui/jquery-ui.min.css", "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/jquery-ui/jquery-ui.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-soovle.js", "/js/cs-run.js" ],
+      "matches": [ "*://soovle.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-kshitter.js", "/js/cs-run.js" ],
+      "matches": [ "*://keywordshitter.com/*", "*://www.keywordshitter.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/chartjs/Chart.bundle.min.js", "/lib/pluralize.js", "/js/CSV.js", "/js/TrendsChart.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-bing.js", "/js/cs-run.js" ],
+      "matches": [ "*://www.bing.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-duckduckgo.js", "/js/cs-run.js" ],
+      "matches": [ "*://duckduckgo.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-yahoo.js", "/js/cs-run.js" ],
+      "matches": [ "*://*.yahoo.com/*", "*://*.search.yahoo.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-amazon.js", "/js/cs-run.js" ],
+      "matches": [ "*://www.amazon.ae/*", "*://www.amazon.com/*", "*://www.amazon.co.uk/*", "*://www.amazon.es/*", "*://www.amazon.nl/*", "*://www.amazon.mx/*", "*://www.amazon.it/*", "*://www.amazon.in/*", "*://www.amazon.de/*", "*://www.amazon.fr/*", "*://www.amazon.cn/*", "*://www.amazon.ca/*", "*://www.amazon.sa/*", "*://www.amazon.sg/*", "*://www.amazon.com.au/*", "*://www.amazon.com.br/*", "*://www.amazon.com.mx/*", "*://www.amazon.com.tr/*", "*://www.amazon.co.jp/*", "*://smile.amazon.ae/*", "*://smile.amazon.com/*", "*://smile.amazon.co.uk/*", "*://smile.amazon.es/*", "*://smile.amazon.nl/*", "*://smile.amazon.mx/*", "*://smile.amazon.it/*", "*://smile.amazon.in/*", "*://smile.amazon.de/*", "*://smile.amazon.fr/*", "*://smile.amazon.cn/*", "*://smile.amazon.ca/*", "*://smile.amazon.sa/*", "*://smile.amazon.sg/*", "*://smile.amazon.com.au/*", "*://smile.amazon.com.br/*", "*://smile.amazon.com.mx/*", "*://smile.amazon.com.tr/*", "*://smile.amazon.co.jp/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/lib/chartjs/Chart.min.css", "/css/style.css", "/css/youtube.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/chartjs/Chart.bundle.min.js", "/lib/pluralize.js", "/js/CSV.js", "/js/TaskManager.js", "/js/TrendsChart.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-youtube.js", "/js/cs-run.js" ],
+      "matches": [ "*://www.youtube.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-ebay.js", "/js/cs-run.js" ],
+      "matches": [ "*://www.ebay.com/*", "*://www.ebay.com.au/*", "*://www.ebay.co.uk/*", "*://www.ebay.ca/*", "*://www.ebay.de/*", "*://www.ebay.fr/*", "*://www.ebay.ie/*", "*://www.ebay.in/*", "*://www.ebay.it/*", "*://www.ebay.ph/*", "*://www.ebay.com.sg/*", "*://pages.ebay.com/*", "*://pages.ebay.com.au/*", "*://pages.ebay.co.uk/*", "*://pages.ebay.ca/*", "*://pages.ebay.fr/*", "*://pages.ebay.ie/*", "*://pages.ebay.in/*", "*://pages.ebay.it/*", "*://pages.ebay.ph/*", "*://pages.ebay.com.sg/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-etsy.js", "/js/cs-run.js" ],
+      "matches": [ "*://www.etsy.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/tooltip.css", "/css/style.css" ],
+      "include_globs": [ "*://*.pinterest.*/*" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/lib/chartjs/Chart.bundle.min.js", "/js/CSV.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-tooltip.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-pinterest.js", "/js/cs-run.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/cs-instagram.js", "/js/cs-run.js" ],
+      "matches": [ "*://www.instagram.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "css": [ "/css/style.css", "/css/openai.css" ],
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-pageview.js", "/js/cs-ui-helper.js", "/js/cs-common.js", "/js/cs-starter.js", "/js/Widget.js", "/js/cs-openai-widget.js", "/js/cs-openai.js", "/js/cs-run.js" ],
+      "matches": [ "*://chat.openai.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "js": [ "/lib/jquery-3.6.0.min.js", "/js/cs-common.js", "/js/bridge.js" ],
+      "matches": [ "https://keywordseverywhere.com/*/autocomplete.html*", "https://keywordseverywhere.com/*/autocomplete.php*", "https://keywordseverywhere.com/*/bulkTraffic.html*", "https://keywordseverywhere.com/*/bulkTraffic.php*", "https://keywordseverywhere.com/*/hashtags.html*", "https://keywordseverywhere.com/*/hashtags.php*", "https://keywordseverywhere.com/*/manual.html*", "https://keywordseverywhere.com/*/manual.php*", "https://keywordseverywhere.com/*/keywords.html*", "https://keywordseverywhere.com/*/keywords.php*", "https://keywordseverywhere.com/*/list.html*", "https://keywordseverywhere.com/*/list.php*", "https://keywordseverywhere.com/*/trends.html*", "https://keywordseverywhere.com/*/trends.php*", "https://keywordseverywhere.com/*/favorites.html*", "https://keywordseverywhere.com/*/favorites.php*", "https://keywordseverywhere.com/*/analyze.html*", "https://keywordseverywhere.com/*/analyze.php*", "https://keywordseverywhere.com/*/gap.html*", "https://keywordseverywhere.com/*/gap.php*", "https://keywordseverywhere.com/*/toppages.html*", "https://keywordseverywhere.com/*/toppages.php*" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "/js/cs-keywordseverywhere.js" ],
+      "matches": [ "https://keywordseverywhere.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "js": [ "/js/cs-iframe-resize.js" ],
+      "matches": [ "https://keywordseverywhere.com/ke/widget.php*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Keyword search volume, cpc and competition for 15+ websites like Google™ Search Console, YouTube™, Amazon™ & more",
+   "host_permissions": [ "http://*/*", "https://*/*" ],
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkxuds12qx/cyXHSQQUtU+BcYSMu21uQFl/uVpjZdT6dz7m4KHeakdeh+gpI6hFmsnygRAIPyfPLvO0XNwKeIOMVyb3+7FisqktA3cZ7EkDEDEvjIeC5u1XEU//ZdyBY4tELsYL2aBlC/Ch3jNkB0A2sGl9WmSyzmC5Rfk7p+6QCCqYoy+rSkaEba/9/Vy46oI+X8w6MBSaipFYlFRvh8450lKXk7LXLJeDypChD/Y+I13UrwdftG9NtdK2sCfmX/T3HW5ZDf4vsac5RjAxLdZKaDKSoX9c8B4+qxtwZfcZ+QaXtLEmZETGh/oXOJYZZRkt1Y/36eflcTTVvRSvbc9QIDAQAB",
+   "manifest_version": 3,
+   "name": "Keywords Everywhere - Keyword Tool",
+   "options_page": "html/options.html",
+   "permissions": [ "storage", "activeTab", "contextMenus", "scripting" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "11.6",
+   "web_accessible_resources": [ {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "/img/*", "/html/ytstats.html", "/html/diffstats.html", "/html/page.html", "/html/openai.html", "/js/cs-gtrends-ajax.js" ]
+   } ]
+}

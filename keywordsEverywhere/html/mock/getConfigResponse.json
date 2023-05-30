@@ -1,0 +1,43 @@
+{
+  "showUrlMetrics": true,
+  "showLinkData": true,
+  "google":
+  {
+      "relatedSearchSelectors": [
+      {
+          "sel": "._e4b a:not([target=\"_blank\"]"
+      },
+      {
+          "sel": "#extrares .brs_col a:not([target=\"_blank\"])"
+      },
+      {
+          "sel": "#botstuff .brs_col a:not([target=\"_blank\"])"
+      },
+      {
+          "sel": "#botstuff #bzMwOe a span",
+          "ignoreClosest": ["g-more-link", "g-popup"]
+      },
+      {
+          "sel": "#botstuff #bzMwOe a .s75CSd",
+          "ignoreClosest": ["g-more-link", "g-popup"]
+      },
+      {
+          "sel": "#botstuff a.k8XOCe .s75CSd",
+          "ignoreClosest": ["g-more-link", "g-popup"]
+      },
+      {
+          "sel": "#extrares #bres a.F3dFTe"
+      }],
+      "relatedMosaicSelectors": [
+      {
+          "sel": "#botstuff [jscontroller=\"V9u9Nb\"] a, #botstuff [jscontroller=\"V9u9Nb\"] a"
+      }]
+  },
+  "instagram": {
+    "sidebarSelector": ".x1dr59a3"
+  },
+  "pinterest":
+  {
+    "endDate": "2023-04-18"
+  }
+}

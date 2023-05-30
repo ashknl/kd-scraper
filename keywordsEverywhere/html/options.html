@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Options for Keywords Everywhere</title>
+        <meta charset="utf-8">
+        <link href="/img/icon16.png" rel="icon" type="image/png" sizes="16x16"/>
+        <link href="/img/icon32.png" rel="icon" type="image/png" sizes="32x32"/>
+        <link rel="stylesheet" href="/css/options.css"/>
+        <link rel="stylesheet" href="/css/tooltip.css"/>
+    </head>
+    <body>
+        <div class="page-layout">
+            <header class="main-header">
+                <iframe src="https://keywordseverywhere.com/ke/1/header.php" width="100%" style="border:none" scrolling="no"></iframe>
+            </header>
+
+            <main>
+                <div class="maintenance-msg hidden">Keywords Everywhere is currently undergoing maintenance</div>
+                <div class="error-msg hidden"></div>
+
+                <section class="section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-content">
+                                <div id="api-settings-section" class="api-settings-section">
+                                    <h3 class="group-title">
+                                        API Settings
+                                        <a class="icon help" title="<p>Keywords Everywhere authenticates you using an API key. You only need an API key if you plan to purchase credits to access paid features.</p><p>Changing the country here will change the volume data shown throughout the tool, for example. If you choose the United States here, then all the search volumes shown by the tool will be only for the United States.</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                    </h3>
+
+                                    <div class="group-card">
+                                        <div class="group-row">
+                                            <div class="label">
+                                                <p>API key</p>
+                                                <input type="text" id="apiKey" placeholder="API key" class="form-input" />
+                                            </div>
+
+                                            <div class="separator"></div>
+                                            <button class="btn" id="validate">Validate</button>
+                                        </div>
+
+                                        <div class="group-row">
+                                            <div class="label">Country</div>
+
+                                            <select id="country"></select>
+                                        </div>
+
+                                        <div class="group-row">
+                                            <div class="label">
+                                                Currency
+                                            </div>
+
+                                            <select id="currency"></select>
+                                        </div>
+                                    </div>
+
+                                    <div id="status"></div>
+                                </div>
+
+                                <div id="data-source-section" class="data-source-section">
+                                    <h3 class="group-title">
+                                        Data Source
+                                        <a class="icon help" title="<p>Keywords Everywhere primarily shows you data obtained from the Google Keyword Planner (GKP).</p><p>However, for some search queries such as banned terms (where you cannot run Google Ads on those terms) and mis-spellings, we use clickstream data.</p><p>If you always want to see only the data from GKP, change the default setting to only GKP.</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                    </h3>
+
+                                    <div class="group-card">
+                                        <div class="group-row">
+                                            <label class="container">
+                                                <input type="radio" id="dataSource-gkp" name="input-dataSource" value="gkp">
+                                                <span class="radiobtn"></span>Google Keyword Planner (only GKP)
+                                            </label>
+                                        </div>
+
+                                        <div class="group-row">
+                                            <label class="container">
+                                                <input type="radio" id="dataSource-cli" name="input-dataSource" value="cli">
+                                                <span class="radiobtn"></span>Google Keyword Planner + Clickstream data (GKP + CLI)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="metrics-section" class="metrics-section">
+                                    <h3 class="group-title">
+                                        Enable/Disable metrics
+                                        <a class="icon help" title="<p>You can choose which metrics you would like to see for the keywords. Changing this will affect which metrics the tool shows you everywhere.</p><p>Disabling these settings will not prevent credit usage. If you want to prevent credits from being used, either remove the API key from the above textbox or disable the settings in the 'Credit Usage For Widgets' section below.</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                        <input type="checkbox" data-selector="#metricsList" class="toggler section-toggle" checked="true">
+                                    </h3>
+
+                                    <div class="group-card" id="metricsList">
+                                        <div class="group-row">
+                                            <div class="label">Volume</div>
+                                            <input type="checkbox" data-metric="vol" class="toggler">
+                                        </div>
+
+                                        <div class="group-row">
+                                            <div class="label">CPC</div>
+                                            <input type="checkbox" data-metric="cpc" class="toggler">
+                                        </div>
+
+                                        <div class="group-row">
+                                            <div class="label">Competition</div>
+                                            <input type="checkbox" data-metric="comp" class="toggler">
+                                        </div>
+
+                                        <div class="group-row">
+                                            <div class="label">Trend</div>
+                                            <input type="checkbox" data-metric="trend" class="toggler">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="metrics-highlight-section" class="websites-section">
+                                    <h3 class="group-title">
+                                        Metrics Highlighting
+                                        <a class="icon help" title="<p>You can highlight keywords based on specific values of the metrics. <br />For example you can highlight all keywords that have a search volume of more than 1000 per month.</p><p>Note that if you set up multiple conditions, then the keywords will be highlighted only if all the conditions are met. <br />For example if you set up highlights on volume > 1000 and CPC > $1, then only those keywords that have more than 1000 searches per month and have a CPC greater than $1 will be highlighted.</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                    </h3>
+
+                                    <div class="group-card">
+                                        <div class="group-row">
+                                            <div class="label">Highlight Color</div>
+                                            <span id="colorpicker-holder"><input type="color" id="highlightColor" value="#D3FFCC"/></span>
+                                        </div>
+
+                                        <div class="group-row">
+                                            <label class="label" for="highlightVolume">Highlight Volume</label>
+                                            <input type="checkbox" id="highlightVolume" class="toggler">
+                                        </div>
+                                        <div class="group-row no-border">
+                                            <div class="highlight-row flexbox center">
+                                                <select id="highlightVolumeCond">
+                                                    <option value="gt"> > </option>
+                                                    <option value="eq"> == </option>
+                                                    <option value="lt"> < </option>
+                                                </select>
+                                                <input type="number" id="highlightVolumeValue" min="0" value="1000" class="form-input">
+                                                <span class="highlight-and">and</span>
+                                                <select id="highlightVolumeCondSec">
+                                                    <option value="gt"> > </option>
+                                                    <option value="eq"> == </option>
+                                                    <option value="lt"> < </option>
+                                                </select>
+                                                <input type="number" id="highlightVolumeValueSec" min="0" value="" class="form-input">
+                                            </div>
+                                        </div>
+
+                                        <div class="group-row">
+                                            <label class="label" for="highlightCPC">Highlight CPC</label>
+                                            <input type="checkbox" id="highlightCPC" class="toggler">
+                                        </div>
+                                        <div class="group-row no-border">
+                                            <div class="highlight-row flexbox center">
+                                                <select id="highlightCPCCond">
+                                                    <option value="gt"> > </option>
+                                                    <option value="eq"> == </option>
+                                                    <option value="lt"> < </option>
+                                                </select>
+                                                <input type="number" id="highlightCPCValue" min="0" value="1.5" class="form-input">
+                                                <span class="highlight-and">and</span>
+                                                <select id="highlightCPCCondSec">
+                                                    <option value="gt"> > </option>
+                                                    <option value="eq"> == </option>
+                                                    <option value="lt"> < </option>
+                                                </select>
+                                                <input type="number" id="highlightCPCValueSec" min="0" value="" class="form-input">
+                                            </div>
+                                        </div>
+
+                                        <div class="group-row">
+                                            <label class="label" for="highlightComp">Highlight Competition</label>
+                                            <input type="checkbox" id="highlightComp" class="toggler">
+                                        </div>
+                                        <div class="group-row no-border">
+                                            <div class="highlight-row flexbox center">
+                                                <select id="highlightCompCond">
+                                                    <option value="gt"> > </option>
+                                                    <option value="eq"> == </option>
+                                                    <option value="lt"> < </option>
+                                                </select>
+                                                <input type="number" id="highlightCompValue" min="0" value="0.5" class="form-input">
+                                                <span class="highlight-and">and</span>
+                                                <select id="highlightCompCondSec">
+                                                    <option value="gt"> > </option>
+                                                    <option value="eq"> == </option>
+                                                    <option value="lt"> < </option>
+                                                </select>
+                                                <input type="number" id="highlightCompValueSec" min="0" value="" class="form-input">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="websites-section" class="websites-section">
+                                    <h3 class="group-title">
+                                        Supported websites
+                                        <a class="icon help" title="<p>This is a list of all the websites where Keywords Everywhere shows you data.</p><p>You can disable those websites where you do not want Keywords Everywhere to show you data, thereby saving on credit usage.</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                        <input type="checkbox" data-selector="#sourceList" class="toggler section-toggle" checked="true">
+                                    </h3>
+
+                                    <div class="group-card" id="sourceList"></div>
+
+                                    <div class="info-line">The search volume shown on all websites is the total number of monthly searches for that search query at Google.com</div>
+                                </div>
+
+                                <div id="widgets-section" class="widgets-section">
+                                    <h3 class="group-title">
+                                        Credit Usage For Widgets
+                                        <a class="icon help" title="<p>On certain websites such as Google, YouTube & Bing, Keywords Everywhere places widgets that show you a list of keywords or trend charts. These widgets use up credits when they show you metrics.</p><p>The settings below let you decide whether to see the search volume, CPC, competition & trend data in those widgets. Disabling them will stop the credits from being used up to show this data. It does not stop the widgets from being displayed.</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                        <input type="checkbox" data-selector="#widgetsList" class="toggler section-toggle" checked="true">
+                                    </h3>
+
+                                    <div class="group-card" id="widgetsList">
+                                    </div>
+                                </div>
+
+                                <div id="miscellaneous-section" class="miscellaneous-section">
+                                    <h3 class="group-title">
+                                        Miscellaneous Settings
+                                        <a class="icon help" title="<p><b>Show [Find Keywords] button</b>: Adds a button at the top left of certain websites which provides the functionality of finding thousands of long-tail keywords for your search query using the Auto-suggest APIs from those websites</p>
+										<p><b>Show Difficulty Metrics</b>: Adds a widget at the top right of every Google SERP and shows the following metrics - SEO Difficulty, On-Page Difficulty & Off-Page Difficulty</p>
+										<p><b>Show Trend Chart in Google/YouTube/Pinterest</b>: Adds a widget at the top right of every Google SERP and shows the trend chart as well as historical search volume for the search term</p>
+										<p><b>Show YouTube Advanced Metrics</b>: Enables the tool to automatically show the advanced metrics in YouTube Search Insights widget. Disabling this will show only basic metrics, and add a button for user to manually get the Advanced metrics</p>
+										<p><b>Show [Add All Keywords] button</b>: Show button to add all keywords shown on a webpage to your Favorite Keywords list</p>
+										<p><b>Show [Export CSV] button</b>: Show button to export all data shown on a webpage to a CSV file.</p>
+										<p><b>Show Metrics in Autocomplete Suggestion Drop Downs</b>: Show volume metrics inside the auto-complete drop down on websites like Google & YouTube.</b></p>
+										<p><b>Show Chart in Google Trends</b>: Show the chart in Google Trends with the search volume data enhancement.</p>
+										<p><b>Show Traffic Data in Google SERPs</b>: View the URL & Domain traffic metrics embedded inside Google search result pages.</p>
+										<p><b>Show Link Metrics in Google SERPs</b>: View the Moz link metrics for the domains embedded inside Google search result pages.</p>
+										<p><B>Show [Continue] Button on ChatGPT</b>: You can disable the Continue floating button shown on ChatGPT.</p>
+										<p><b>Location of metrics</b>: Choose whether you want to see the metrics for the search query under the search box or above the search results</p>">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                                        </a>
+                                        <input type="checkbox" data-selector="#miscellaneousSection" class="toggler section-toggle" checked="true">
+                                    </h3>
+
+                                    <div class="group-card" id="miscellaneousSection">
+                                            <div class="group-row">
+                                                <label class="label" for="showAutocompleteButton">
+                                                    Show "Find Keywords" Button<br/><small>(Google, YouTube, Bing, Pinterest, Amazon, eBay & Etsy)</small>
+                                                </label>
+                                                <input type="checkbox" id="showAutocompleteButton" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showDifficultyMetrics">
+                                                    Show Difficulty Metrics</small>
+                                                </label>
+                                                <input type="checkbox" id="showDifficultyMetrics" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showGoogleTrendChart">
+                                                    Show Trend Chart in Google/YouTube/Pinterest
+                                                </label>
+                                                <input type="checkbox" id="showGoogleTrendChart" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showYoutubeAdvancedMetrics">
+                                                    Show YouTube Advanced Metrics
+                                                </label>
+                                                <input type="checkbox" id="showYoutubeAdvancedMetrics" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showAddAllButton">Show [Add All Keywords] Button</label>
+                                                <input type="checkbox" id="showAddAllButton" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showExportButton">Show "Export CSV" Button</label>
+                                                <input type="checkbox" id="showExportButton" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showMetricsForSuggestions">
+                                                    Show Metrics in Autocomplete Suggestion Drop Downs<br/>
+                                                    <small>(Google, YouTube, Amazon, Bing, Pinterest, DuckDuckGo, eBay & Etsy)</small>
+                                                </label>
+                                                <input type="checkbox" id="showMetricsForSuggestions" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showChartsForGoogleTrends">
+                                                    Show Chart in Google Trends
+                                                </label>
+                                                <input type="checkbox" id="showChartsForGoogleTrends" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showGoogleTraffic">Show Traffic Data in Google SERPs</label>
+                                                <input type="checkbox" id="showGoogleTraffic" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showGoogleMetrics">Show Link Metrics in Google SERPs</label>
+                                                <input type="checkbox" id="showGoogleMetrics" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <label class="label" for="showChatGPTactions">Show [Continue] Button on ChatGPT</label>
+                                                <input type="checkbox" id="showChatGPTactions" class="toggler">
+                                            </div>
+
+                                            <div class="group-row">
+                                                <div class="label">Location of metrics</div>
+                                                <select id="googlePos">
+                                                    <option value="default">Under Search Box</option>
+                                                    <option value="abvres">Above Search Results</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-menu">
+                                <div class="sticky" style="top: 3rem">
+                                    <nav id="nav-menu" class="nav">
+                                        <a class="nav-link scrollto" href="#api-settings-section">
+                                            API Settings
+                                        </a>
+                                        <a class="nav-link scrollto" href="#data-source-section">
+                                            Data Sources
+                                        </a>
+                                        <a class="nav-link scrollto" href="#metrics-section">
+                                            Enable-Disable Metrics
+                                        </a>
+                                        <a class="nav-link scrollto" href="#metrics-highlight-section">
+                                            Metrics Highlighting
+                                        </a>
+                                        <a class="nav-link scrollto" href="#websites-section">
+                                            Supported Websites
+                                        </a>
+                                        <a class="nav-link scrollto" href="#widgets-section">
+                                            Credit Usage for Widgets
+                                        </a>
+                                        <a class="nav-link scrollto" href="#miscellaneous-section">
+                                            Miscellaneous Settings
+                                        </a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="container">
+                        <div class="info-line">If you find this extension useful, please give it a rating at the
+                            <a href="https://chrome.google.com/webstore/detail/keywords-everywhere/hbapdpeemoojbophdfndmlgdhppljgmp/reviews" class="link chromestore" target="_blank">Chrome web store</a>&nbsp;&nbsp; or <a href="https://addons.mozilla.org/en-US/firefox/addon/keywords-everywhere/" class="link firefox" target="_blank">Firefox add-on page</a>
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+
+        <script type="text/javascript" src="/lib/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="/lib/jquery.easing.js"></script>
+        <script type="text/javascript" src="/js/cs-tooltip.js"></script>
+        <script type="text/javascript" src="/js/SourceList.js"></script>
+        <script type="text/javascript" src="/js/Status.js"></script>
+        <script type="text/javascript" src="/js/options.js"></script>
+    </body>
+</html>
