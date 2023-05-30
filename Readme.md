@@ -17,6 +17,7 @@ npm install
 ## Usage
 ### Argument
 `-s, --keyword`: The keywords to search for. Use quotes if multi-word strings.
+
 `-p, --path`: Path/name of the text file to save data to
 
 Example:
